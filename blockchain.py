@@ -14,19 +14,15 @@ def addvalue(transaction_amount, last_transaction=[1.0]):
 
 
 def verify_chain():
-    block_index = 0
     is_valid = True
-    for block in blockchain:
+    for block_index in range(len(blockchain)):
         if block_index == 0:
-            block_index += 1
             continue
-        elif block[0] == blockchain[block_index - 1]:
+        elif blockchain[block_index][0] == blockchain[block_index - 1]:
             is_valid = True
         else:
             is_valid = False
-            break
-        block_index += 1
-    return is_valid
+        break
 
 
 def get_transaction_value():
@@ -42,9 +38,10 @@ def get_user_choice():
 def print_blockchain_elements():
     for index, block in enumerate(blockchain):
         print(index, '.Outputting Block >>>', block)
-
-
-while True:
+    else:
+        print('*'*100)
+waiting_user_input = True
+while waiting_user_input :
     print('Please choose')
     print('1: Add a new transaction value')
     print('2: Output the blockchain blocks')
@@ -62,7 +59,7 @@ while True:
         if len(blockchain) >= 1:
             blockchain[0] = [1.1]
     elif user_choice == 'q':
-        break
+        waiting_user_input = False
     else:
         print('input was invalid, please choose another option')
     if not verify_chain():

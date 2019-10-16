@@ -67,4 +67,4 @@ while waiting_user_input :
         print_blockchain_elements()
         break
 
-print('OK, Goodbye (♥_♥)')
+print('OK, Goodbye (⌐⊙_⊙)')

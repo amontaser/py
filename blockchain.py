@@ -22,7 +22,7 @@ def verify_chain():
             is_valid = True
         else:
             is_valid = False
-        break
+    return is_valid
 
 
 def get_transaction_value():
@@ -40,8 +40,10 @@ def print_blockchain_elements():
         print(index, '.Outputting Block >>>', block)
     else:
         print('*'*100)
+
+
 waiting_user_input = True
-while waiting_user_input :
+while waiting_user_input:
     print('Please choose')
     print('1: Add a new transaction value')
     print('2: Output the blockchain blocks')
@@ -66,5 +68,5 @@ while waiting_user_input :
         print('invalid blockchain!')
         print_blockchain_elements()
         break
-
-print('OK, Goodbye (⌐⊙_⊙)')
+else:
+    print('\n╭∩╮(︶︿︶)╭∩╮\n  OK,Goodbye')
